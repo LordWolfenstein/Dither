@@ -66,4 +66,8 @@
       <HintPath>C:\Program Files\Paint.NET\PaintDotNet.Windows.Framework.dll</HintPath>
     </Reference>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="py &quot;$(ProjectDir)postcompile.py&quot; &quot;$(TargetDir)$(TargetFileName)&quot;" />
+  </Target>
 </Project>
